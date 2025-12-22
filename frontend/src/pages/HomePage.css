@@ -1,0 +1,49 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.left-panel {
+  width: 50%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.right-panel {
+  width: 50%;
+}
+
+.about h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.link {
+  padding: 2px;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.8;
+}

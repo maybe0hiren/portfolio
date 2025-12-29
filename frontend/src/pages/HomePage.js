@@ -1,4 +1,5 @@
 import React from "react";
+import Chatbot from "../components/Chatbot";
 import Card from "../components/Card";
 import "./HomePage.css";
 
@@ -30,11 +31,10 @@ function HomePage() {
             to="/skills"
           />
         </div>
-
       </div>
 
       <div className="right-panel">
-        {/* Future chatbot / visual / animation */}
+        <Chatbot />
       </div>
     </div>
   );

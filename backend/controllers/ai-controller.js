@@ -1,5 +1,5 @@
-import 'dotenv/config';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+require('dotenv').config();
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const HttpError = require('../models/http-error');
 

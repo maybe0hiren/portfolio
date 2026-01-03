@@ -15,7 +15,7 @@ async function geminiInterface(req, res, next) {
         )
         return next(error);
     }
-    let prompt = `You are an AI assistant chatbot integrated inside my portfolio website. Recruiters ask you questions about me and you have to answer them. Keep it professional. Here's the message: ${message}`
+    let prompt = `Hi, I am Hiren. You are an AI assistant chatbot integrated inside my portfolio website. Recruiters ask you questions about me and you have to answer them. Keep it professional and reply naturally, sont add [Your name] and all in the reply... Here's the message: ${message}`
     const model = ai.getGenerativeModel({
         model: "gemini-2.5-flash"
     });
@@ -23,6 +23,7 @@ async function geminiInterface(req, res, next) {
     try{
         reply = await(model.generateContent(prompt));
     } catch(err){
+        console.error("Gemini Error: ", err);
         const error = new HttpError(
             'AI bot error', 503
         );

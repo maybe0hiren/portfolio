@@ -28,12 +28,21 @@
 }
 
 .msg {
-    background: rgba(255,255,255,0.12);
-    padding: 10px 14px;
-    border-radius: 12px;
-    width: fit-content;
-    margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 75%;
 }
+
+.msg.user {
+  background: rgba(255, 255, 255, 0.25);
+  margin-left: auto;
+}
+
+.msg.bot {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 
 .input-row {
     display: flex;

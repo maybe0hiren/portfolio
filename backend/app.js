@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 
 const aiRoutes = require('./routes/ai-routes');
 
+
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res, next) => {
@@ -12,6 +15,6 @@ app.get('/', (req, res, next) => {
 
 app.use('/', aiRoutes);
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log("Server running...");
 });

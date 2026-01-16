@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.certificatePage-container {
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #eaeaea;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.left-panel {
+  width: 50%;
+  padding: 4rem 3rem;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  overflow-y: auto;
+}
+
+.left-panel > * {
+  flex-shrink: 0;
+}
+
+.left-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.left-panel h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.right-panel {
+  width: 50%;
+  box-sizing: border-box;
+}

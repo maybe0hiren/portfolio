@@ -1,23 +1,17 @@
 import "./CertificateContainer.css";
-function CertificateContainer({ data }){
-    // if (!data) return null;
 
-    
-    // const sampleData = {
-    //                 name: "MERN",
-    //                 description: "MERN Stack Course",
-    //                 link: "youtube.com",
-    //                 image: ""
-    //             }
+
+function CertificateContainer({data, onClick}){
+    if (!data) return null;
     return(
         <>
-        <div className="container">
+        <div className="container" onClick={onClick}>
             {true && (
                 <div className="image-container">
-                    <img src="/temp.jpg" alt="Not Available" className="image"/>
+                    <img src={data.image} alt="Not Available" className="image"/>
                 </div>
             )}
-            <h2>MERN Stack Course</h2>
+            <h2>{data.name}</h2>
         </div>
         </>
     )

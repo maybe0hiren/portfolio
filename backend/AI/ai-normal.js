@@ -6,6 +6,8 @@ const HttpError = require('../models/http-error');
 
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+const aboutME = process.env.ABOUT_ME
+
 
 async function geminiInterface(req, res, next) {
     const message = req.body.message;
@@ -15,7 +17,7 @@ async function geminiInterface(req, res, next) {
         )
         return next(error);
     }
-    let prompt = `Hi, I am Hiren. You are an AI assistant chatbot integrated inside my portfolio website. Recruiters ask you questions about me and you have to answer them. Keep it professional and reply naturally, sont add [Your name] and all in the reply... Here's the message: ${message}`
+    let prompt = `Hi, Here is my quick introduction ${aboutME}. You are an AI assistant chatbot integrated inside my portfolio website. Recruiters ask you questions about me and you have to answer them. Keep it professional and reply naturally, dont add [Your name] and all in the reply... Don't generate more than 2-3 lines per reply and don't give any extra information until asked for. Here's the message: ${message}`
     const model = ai.getGenerativeModel({
         model: "gemini-2.5-flash"
     });

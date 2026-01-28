@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Chatbot.css";
 
-function Chatbot(){
+function Chatbot({ mode }){
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -15,13 +15,28 @@ function Chatbot(){
 
     setMessages(prev => [...prev, {role: "user", text: userMessage}]);
     try{
-      const res = await fetch("http://localhost:5000/ai", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message: userMessage })
-      });
+      let res;
+      if (mode === "Normal"){
+        res = await fetch("http://localhost:5000/aiNormal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: userMessage })
+        });
+      }
+      else if (mode === "Projects") {
+        res = await fetch("http://localhost:5000/aiProjects", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: userMessage,
+            repoLink: "REPO LINK HERE"
+          })
+        });
+      }
       const data = await res.json();
       setMessages(prev => [
         ...prev,

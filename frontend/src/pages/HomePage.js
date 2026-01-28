@@ -34,7 +34,9 @@ function HomePage() {
       </div>
 
       <div className="right-panel">
-        <Chatbot />
+        <Chatbot 
+          mode="Normal"
+        />
       </div>
     </div>
   );

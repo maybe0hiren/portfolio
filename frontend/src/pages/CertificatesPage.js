@@ -53,7 +53,7 @@ function CertificatesPage() {
         </div>
 
         <div className="right-panel">
-          <Chatbot mode="Projects" />
+          <Chatbot mode="Certificate" />
         </div>
       </div>
 

@@ -1,49 +1,65 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Popup from "../components/Popup";
 import Chatbot from "../components/Chatbot";
 import CertificateContainer from "../components/CertificateContainer";
 
+import "./CertificatesPage.css";
 
-import "./CertificatePage.css";
+function CertificatesPage() {
+  const [certificates, setCertificates] = useState([]);
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [popupData, setPopupData] = useState(null);
 
-function CertificatesPage(){
-    const [popupOpen, setPopupOpen] = useState(false);
-    const [popupData, setPopupData] = useState(null);
-    const data = {
-                    name: "MERN",
-                    description: "MERN Stack Course",
-                    link: "https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/learn/lecture/16833312#overview",
-                    image: "/temp.jpg"
-                }   
-    function openPopup(){
-        setPopupData(data);
-        setPopupOpen(true);
+  useEffect(() => {
+    async function fetchCertificates() {
+      try {
+        const res = await fetch("http://localhost:5000/certificates");
+        const data = await res.json();
+
+        setCertificates(data);
+      } catch (err) {
+        console.error("Failed to fetch certificates:", err);
+      }
     }
 
-    function closePopup(){
-        setPopupOpen(false);
-        setPopupData(null);
-    }
-    return(
-        <>
-        <div className="certificatePage-container">
-            <div className="left-panel">
-                <h1>Certificates</h1>
-                <CertificateContainer data={data} onClick={openPopup}/>
-                <CertificateContainer />
-                <CertificateContainer />
-                <CertificateContainer />
+    fetchCertificates();
+  }, []);
 
-            </div>
-            <div className="right-panel">
-                <Chatbot />
-            </div>
+  function openPopup(certificate) {
+    setPopupData(certificate);
+    setPopupOpen(true);
+  }
+
+  function closePopup() {
+    setPopupOpen(false);
+    setPopupData(null);
+  }
+
+  return (
+    <>
+      <div className="certificatePage-container">
+        <div className="left-panel">
+          <h1>Certificates</h1>
+          {certificates.map((cert) => (
+            <CertificateContainer
+              data={{
+                ...cert,
+                image: `http://localhost:5000/${cert.image}`
+              }}
+              onClick={() => openPopup(cert)}
+            />
+          ))}
         </div>
-        <Popup isOpen={popupOpen} data={popupData} onClose={closePopup} />
-        </>
-    );
+
+        <div className="right-panel">
+          <Chatbot mode="Projects" />
+        </div>
+      </div>
+
+      <Popup isOpen={popupOpen} data={popupData} onClose={closePopup} />
+    </>
+  );
 }
 
 export default CertificatesPage;

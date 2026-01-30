@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const HttpError = require('../models/http-error');
+const HttpError = require('../../models/http-error');
 
 async function knowThyRepoInterface(req, res, next){
     const message = req.body.message;
@@ -35,8 +35,10 @@ async function knowThyRepoInterface(req, res, next){
             return next(error);
         }
 
+        const answer = data.answer;
+        console.log(answer);
         res.json({
-            answer: data.answer
+            answer: answer
         });
     } catch(err) {
         const error = new HttpError(

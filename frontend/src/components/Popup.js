@@ -6,7 +6,7 @@ function Popup({isOpen, data, onClose}){
         <>
         <div className="popup" onClick={onClose}>
             <div className="container" onClick={(e) => e.stopPropagation()}>
-                <img src={data.image} className="image-container" />
+                <img src={`http://localhost:5000/${data.image}`} className="image-container" alt={data.name}/>
                 <h1>{data.name}</h1>
                 <h3>{data.description}</h3>
                 <br />

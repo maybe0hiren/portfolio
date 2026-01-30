@@ -11,7 +11,7 @@ function CertificateContainer({data, onClick}){
                     <img src={data.image} alt="Not Available" className="image"/>
                 </div>
             )}
-            <h2>{data.name}</h2>
+            <h2>{data.id}. {data.name}</h2>
         </div>
         </>
     )

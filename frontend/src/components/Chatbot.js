@@ -33,14 +33,14 @@ function Chatbot({ mode }){
           },
           body: JSON.stringify({
             message: userMessage,
-            repoLink: "REPO LINK HERE"
+            repoLink: "https://github.com/maybe0hiren/CloudStorage"
           })
         });
       }
       const data = await res.json();
       setMessages(prev => [
         ...prev,
-        { role: "bot", text: data.reply }
+        { role: "bot", text: data.answer }
       ]);
     } catch(err) {
       setMessage(prev => [

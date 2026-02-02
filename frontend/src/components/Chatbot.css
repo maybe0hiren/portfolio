@@ -95,3 +95,8 @@
     background: rgba(255,255,255,0.35);
     transform: translateY(-1px);
 }
+
+.chatbot-header{
+    color: rgba(216, 216, 216, 0.61);
+    align-self: center;
+}

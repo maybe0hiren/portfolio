@@ -10,6 +10,7 @@ function CertificatesPage() {
   const [certificates, setCertificates] = useState([]);
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState(null);
+  const [activeCertificate, setActiveCertificate] = useState(null);
 
   useEffect(() => {
     async function fetchCertificates() {
@@ -36,6 +37,10 @@ function CertificatesPage() {
     setPopupData(null);
   }
 
+  function handleAI(cert) {
+  setActiveCertificate(cert);
+  }
+
   return (
     <>
       <div className="certificatePage-container">
@@ -48,12 +53,13 @@ function CertificatesPage() {
                 image: `http://localhost:5000/${cert.image}`
               }}
               onClick={() => openPopup(cert)}
+              onAI={() => handleAI(cert)}
             />
           ))}
         </div>
 
         <div className="right-panel">
-          <Chatbot mode="Certificate" />
+          <Chatbot mode="Certificates" content={activeCertificate} />
         </div>
       </div>
 

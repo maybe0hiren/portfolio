@@ -40,3 +40,17 @@
   height: 100%;
   object-fit: cover;
 }
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+.title-row h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}

@@ -60,10 +60,10 @@ function Chatbot({ mode, content }){
           })
         });
       }
-      else if (mode === "Certificates") {
+      else if (mode === "Certificates" && content) {
         res = await fetch("http://localhost:5000/aiCertificates", {
           method: "POST",
-          headers: {
+          headers: {  
             "Content-type": "application/json"
           },
           body: JSON.stringify({
@@ -71,6 +71,15 @@ function Chatbot({ mode, content }){
             certificateID: content.id
           })
         })
+      }
+      else {
+        res = await fetch("http://localhost:5000/aiNormal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: userMessage })
+        });
       }
       const data = await res.json();
       setMessages(prev => [

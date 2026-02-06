@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Popup from "../components/Popup";
 import Chatbot from "../components/Chatbot";
-import CertificateContainer from "../components/CertificateContainer";
+import Container from "../components/Container";
 
 import "./CertificatesPage.css";
 
@@ -47,13 +47,14 @@ function CertificatesPage() {
         <div className="left-panel">
           <h1>Certificates</h1>
           {certificates.map((cert) => (
-            <CertificateContainer
+            <Container
               data={{
                 ...cert,
                 image: `http://localhost:5000/${cert.image}`
               }}
               onClick={() => openPopup(cert)}
               onAI={() => handleAI(cert)}
+              type={"certificate"}
             />
           ))}
         </div>
@@ -63,7 +64,7 @@ function CertificatesPage() {
         </div>
       </div>
 
-      <Popup isOpen={popupOpen} data={popupData} onClose={closePopup} />
+      <Popup isOpen={popupOpen} data={popupData} onClose={closePopup} type={"certificate"} />
     </>
   );
 }

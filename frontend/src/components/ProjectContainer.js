@@ -1,8 +1,8 @@
 import AIButton from "./AIButton";
-import "./CertificateContainer.css";
+import "./ProjectContainer.css";
 
 
-function CertificateContainer({data, onClick, onAI}){
+function ProjectContainer({data, onClick, onAI}){
     if (!data) return null;
     return(
         <>
@@ -21,4 +21,4 @@ function CertificateContainer({data, onClick, onAI}){
     )
 }
 
-export default CertificateContainer;
+export default ProjectContainer;

@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const certificatesRoutes = require('./routes/certificate-routes')
 const aiRoutes = require('./routes/ai-routes');
+const projectsRoutes = require('./routes/project-routes')
 
 const path = require("path");
 
@@ -16,6 +17,7 @@ app.use(
 );
 
 app.use("/certificates", certificatesRoutes);
+app.use("/projects", projectsRoutes);
 
 app.get('/', (req, res, next) => {
     res.send("Server running...");

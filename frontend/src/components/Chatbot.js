@@ -12,9 +12,15 @@ function Chatbot({ mode, content }){
       setChatbotHeader("Ask me anything about Hiren...");
     } 
     else if (mode === "Projects") {
-      setChatbotHeader(
-        "Click on the project's AI icon to ask project specific questions..."
-      );
+      if (content) {
+        setChatbotHeader(
+          `Answering questions for ${content.name}`
+        );
+      } else {
+        setChatbotHeader(
+          "Click on the project to ask project specific questions..."
+        );
+      }
     } 
     else if (mode === "Certificates") {
       if (content) {
@@ -56,7 +62,7 @@ function Chatbot({ mode, content }){
           },
           body: JSON.stringify({
             message: userMessage,
-            repoLink: "https://github.com/maybe0hiren/CloudStorage"
+            repoLink: content.link
           })
         });
       }

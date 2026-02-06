@@ -1,6 +1,6 @@
 .container {
+  height: 27rem;
   width: 90%;
-  height: 25rem;
   box-sizing: border-box;
 
   background: rgba(255, 255, 255, 0.15);

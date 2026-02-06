@@ -5,7 +5,7 @@ function AIButton({ onClick }) {
     <button
       className="ai-btn"
       onClick={(e) => {
-        e.stopPropagation(); // prevents card click
+        e.stopPropagation();
         onClick();
       }}
     >

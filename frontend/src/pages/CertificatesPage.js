@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Popup from "../components/Popup";
 import Chatbot from "../components/Chatbot";
 import Container from "../components/Container";
+import BackButton from "../components/BackButton";
 
 import "./CertificatesPage.css";
 
@@ -45,7 +46,10 @@ function CertificatesPage() {
     <>
       <div className="certificatePage-container">
         <div className="left-panel">
+        <div className="projects-header">
+          <BackButton />
           <h1>Certificates</h1>
+        </div>
           {certificates.map((cert) => (
             <Container
               data={{

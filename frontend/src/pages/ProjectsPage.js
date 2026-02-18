@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chatbot from "../components/Chatbot";
 import Container from "../components/Container";
+import BackButton from "../components/BackButton";
 
 import "./ProjectsPage.css";
 
@@ -28,7 +29,10 @@ function ProjectsPage() {
   return (
     <div className="projectsPage-container">
       <div className="left-panel">
-        <h1>Projects</h1>
+        <div className="projects-header">
+          <BackButton />
+          <h1>Projects</h1>
+        </div>
           {projects.map((proj) => (
             <Container
               data={{

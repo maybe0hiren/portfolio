@@ -13,6 +13,20 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
+.projects-header {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  margin-bottom: 16px;
+}
+
+.projects-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
 .left-panel {
   width: 50%;
   padding: 4rem 3rem;

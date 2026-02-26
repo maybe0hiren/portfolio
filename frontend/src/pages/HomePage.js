@@ -26,10 +26,6 @@ function HomePage() {
             title="Certificates"
             to="/certificates"
           />
-          <Card
-            title="Skills"
-            to="/skills"
-          />
         </div>
       </div>
 

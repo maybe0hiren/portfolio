@@ -1,9 +1,24 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import Chatbot from "../components/Chatbot";
 import Card from "../components/Card";
 import "./HomePage.css";
 
 function HomePage() {
+  const [recentActivity, setRecentActivity] = useState("");  
+  useEffect(() => {
+    async function getRecentActivity() {
+      try{
+        const res = await fetch("http://localhost:5000/currentActivity");
+        const data = await res.json();
+
+        setRecentActivity(data);
+      } catch(err) {
+        setRecentActivity("Failed to summarize" + err);
+      }
+    }
+    getRecentActivity();
+  }, [])
   return (
     <div className="home-container">
       <div className="left-panel">
@@ -26,6 +41,10 @@ function HomePage() {
             title="Certificates"
             to="/certificates"
           />
+        </div>
+        <div className="recentActivitiesPanel">
+          <h1>Recent Activities</h1>
+          <p>{recentActivity}</p>
         </div>
       </div>
 

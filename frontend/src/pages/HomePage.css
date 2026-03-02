@@ -14,6 +14,12 @@
   gap: 3rem;
 }
 
+
+.recentActivitiesPanel {
+  display: flex;
+  flex-direction: column;
+}
+
 .right-panel {
   width: 50%;
   padding-top: 5%;

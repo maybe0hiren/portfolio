@@ -21,6 +21,7 @@ yarn-error.log*
 
 
 backend/node_modules
+backend/posts.txt
 
 
 frontend/public/temp.jpg

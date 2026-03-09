@@ -16,7 +16,7 @@ function CertificatesPage() {
   useEffect(() => {
     async function fetchCertificates() {
       try {
-        const res = await fetch("http://localhost:5000/certificates");
+        const res = await fetch("https://portfoliobackend.hirenlabs.com/certificates");
         const data = await res.json();
 
         setCertificates(data);
@@ -54,7 +54,7 @@ function CertificatesPage() {
             <Container
               data={{
                 ...cert,
-                image: `http://localhost:5000/${cert.image}`
+                image: `https://portfoliobackend.hirenlabs.com/${cert.image}`
               }}
               onClick={() => openPopup(cert)}
               onAI={() => handleAI(cert)}

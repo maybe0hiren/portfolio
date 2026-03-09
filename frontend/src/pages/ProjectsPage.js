@@ -11,7 +11,7 @@ function ProjectsPage() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const res = await fetch("http://localhost:5000/projects");
+        const res = await fetch("https://portfoliobackend.hirenlabs.com/projects");
         const data = await res.json();
 
         setProjects(data);

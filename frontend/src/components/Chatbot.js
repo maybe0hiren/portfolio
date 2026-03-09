@@ -46,7 +46,7 @@ function Chatbot({ mode, content }){
     try{
       let res;
       if (mode === "Normal"){
-        res = await fetch("http://localhost:5000/aiNormal", {
+        res = await fetch("https://portfoliobackend.hirenlabs.com/aiNormal", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -55,7 +55,7 @@ function Chatbot({ mode, content }){
         });
       }
       else if (mode === "Projects") {
-        res = await fetch("http://localhost:5000/aiProjects", {
+        res = await fetch("https://portfoliobackend.hirenlabs.com/aiProjects", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -67,7 +67,7 @@ function Chatbot({ mode, content }){
         });
       }
       else if (mode === "Certificates" && content) {
-        res = await fetch("http://localhost:5000/aiCertificates", {
+        res = await fetch("https://portfoliobackend.hirenlabs.com/aiCertificates", {
           method: "POST",
           headers: {  
             "Content-type": "application/json"
@@ -79,7 +79,7 @@ function Chatbot({ mode, content }){
         })
       }
       else {
-        res = await fetch("http://localhost:5000/aiNormal", {
+        res = await fetch("https://portfoliobackend.hirenlabs.com/aiNormal", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

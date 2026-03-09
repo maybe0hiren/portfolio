@@ -9,7 +9,7 @@ function HomePage() {
   useEffect(() => {
     async function getRecentActivity() {
       try{
-        const res = await fetch("http://localhost:5000/currentActivity");
+        const res = await fetch("https://portfoliobackend.hirenlabs.com/currentActivity");
         const data = await res.json();
 
         setRecentActivity(data);

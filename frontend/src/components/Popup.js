@@ -13,7 +13,7 @@ function Popup({isOpen, data, onClose, type}){
         <div className="popup" onClick={onClose}>
             <div className="container" onClick={(e) => e.stopPropagation()} style={{ height: height }}>
                 {type === "certificate" &&
-                <img src={`http://localhost:5000/${data.image}`} className="image-container" alt={data.name}/>
+                <img src={`https://portfoliobackend.hirenlabs.com/${data.image}`} className="image-container" alt={data.name}/>
                 }
                 <h1>{data.name}</h1>
                 <h3>{data.description}</h3>

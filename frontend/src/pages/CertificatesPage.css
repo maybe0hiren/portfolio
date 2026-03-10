@@ -56,3 +56,20 @@ body {
   width: 50%;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+
+  .right-panel {
+    display: none;
+  }
+
+  .left-panel {
+    width: 100%;
+  }
+
+  .home-container,
+  .projectsPage-container,
+  .certificatePage-container {
+    flex-direction: column;
+  }
+}

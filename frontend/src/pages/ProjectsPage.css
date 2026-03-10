@@ -49,3 +49,37 @@ body {
   box-sizing: border-box;
   padding-top: 5%;
 }
+
+
+@media (max-width: 768px) {
+
+  .right-panel {
+    display: none;
+  }
+
+  .left-panel {
+    width: 100%;
+  }
+
+  .home-container,
+  .projectsPage-container,
+  .certificatePage-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 14px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+}

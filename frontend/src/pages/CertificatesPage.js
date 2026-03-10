@@ -4,6 +4,7 @@ import Popup from "../components/Popup";
 import Chatbot from "../components/Chatbot";
 import Container from "../components/Container";
 import BackButton from "../components/BackButton";
+import MobileChatbotButton from "../components/MobileChatbotButton";
 
 import "./CertificatesPage.css";
 
@@ -69,6 +70,7 @@ function CertificatesPage() {
       </div>
 
       <Popup isOpen={popupOpen} data={popupData} onClose={closePopup} type={"certificate"} />
+      <MobileChatbotButton mode="Certificates" content={activeCertificate}/>
     </>
   );
 }

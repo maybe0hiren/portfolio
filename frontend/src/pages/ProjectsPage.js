@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Chatbot from "../components/Chatbot";
 import Container from "../components/Container";
 import BackButton from "../components/BackButton";
+import MobileChatbotButton from "../components/MobileChatbotButton";
 
 import "./ProjectsPage.css";
 
@@ -27,6 +28,7 @@ function ProjectsPage() {
   setActiveProject(proj);
   }
   return (
+    <>
     <div className="projectsPage-container">
       <div className="left-panel">
         <div className="projects-header">
@@ -47,6 +49,8 @@ function ProjectsPage() {
         <Chatbot mode="Projects" content={activeProject}/>
       </div>
     </div>
+    <MobileChatbotButton mode="Projects" content={activeProject}/>
+    </>
   );
 }
 

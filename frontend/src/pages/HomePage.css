@@ -1,10 +1,15 @@
 .home-container {
-  min-height: 100vh;
   display: flex;
+  width: 100%;
+
   background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
   color: #eaeaea;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
+
+  overflow-x: hidden;
 }
+
 
 .left-panel {
   width: 50%;
@@ -15,14 +20,19 @@
 }
 
 
-.recentActivitiesPanel {
-  display: flex;
-  flex-direction: column;
-}
-
 .right-panel {
   width: 50%;
   padding-top: 5%;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+
+.recentActivitiesPanel {
+  display: flex;
+  flex-direction: column;
 }
 
 .about h1 {
@@ -36,6 +46,7 @@
   font-weight: 400;
   color: #b0b0b0;
 }
+
 
 .info-cards {
   display: flex;
@@ -53,4 +64,38 @@
 
 .link:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+
+  .home-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .right-panel {
+    display: none;
+  }
+
+}
+
+
+.social-links {
+  display: inline-flex;
+  gap: 12px;
+  margin-left: 6px;
+  flex-wrap: wrap;
+}
+
+
+.page {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

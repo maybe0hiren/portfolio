@@ -31,3 +31,27 @@
     font-weight: 600;
 }
 
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .info-cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .link {
+    display: block;
+    margin-top: 4px;
+  }
+}

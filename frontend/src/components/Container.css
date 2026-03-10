@@ -1,6 +1,8 @@
 .container {
   height: 27rem;
   width: 90%;
+  overflow: hidden;
+  box-sizing: border-box;
   box-sizing: border-box;
 
   background: rgba(255, 255, 255, 0.15);
@@ -53,4 +55,13 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0;
+}
+
+
+.container h1,
+.container h2,
+.container h3,
+.container p {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
